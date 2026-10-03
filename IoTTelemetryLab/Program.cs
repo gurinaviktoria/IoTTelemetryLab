@@ -13,7 +13,7 @@ Console.WriteLine($"Отримано показiв: {rawData.Count}");
 var cleaned = TelemetryCleaner.RemoveInvalid(rawData).ToList();
 Console.WriteLine($"Пiсля очищення: {cleaned.Count}");
 
-// Варіативна частина: оцінка станів через Pattern Matching
+// Варіативна частина:оцінка станів через Pattern Matching
 int criticalCount = TelemetryAnalytics.CountByStatus(cleaned, sensorType, SafetyStatus.Critical);
 int warningCount = TelemetryAnalytics.CountByStatus(cleaned, sensorType, SafetyStatus.Warning);
 Console.WriteLine($"Критичних показiв: {criticalCount}, попереджень: {warningCount}");
